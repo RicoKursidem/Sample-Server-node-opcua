@@ -104,7 +104,7 @@
             <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=5026</Reference>
         </References>
         <Value>
-            <uax:String>VDMA RobotController 01</uax:String>
+            <uax:String>AZO RobotController 01</uax:String>
         </Value>
     </UAVariable>
     <UAObject NodeId="ns=1;i=5032" BrowseName="4:Components">
@@ -194,8 +194,8 @@
         </References>
         <Value>
             <uax:LocalizedText>
-                <uax:Locale>en-US</uax:Locale>
-                <uax:Text>TestDriveManufacturer</uax:Text>
+                <uax:Locale>de-DE</uax:Locale>
+                <uax:Text>AZO Gmbh</uax:Text>
             </uax:LocalizedText>
         </Value>
     </UAVariable>
@@ -305,7 +305,7 @@
             <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=5026</Reference>
         </References>
         <Value>
-            <uax:String>N 50.0823924 E 8.6257018</uax:String>
+            <uax:String>N 49.4290039 E 9.4320532</uax:String>
         </Value>
     </UAVariable>
     <UAVariable DataType="LocalizedText" ParentNodeId="ns=1;i=5002" NodeId="ns=1;i=6002" BrowseName="3:Manufacturer">
@@ -317,20 +317,20 @@
         </References>
         <Value>
             <uax:LocalizedText>
-                <uax:Locale>en-US</uax:Locale>
-                <uax:Text>RobotControllerManufacturer</uax:Text>
+                <uax:Locale>de-DE</uax:Locale>
+                <uax:Text>AZO Gmbh</uax:Text>
             </uax:LocalizedText>
         </Value>
     </UAVariable>
     <UAVariable DataType="String" ParentNodeId="ns=1;i=5002" NodeId="ns=1;i=6062" BrowseName="3:ManufacturerUri">
-        <DisplayName>ManufacturerUri</DisplayName>
+        <DisplayName>AZO</DisplayName>
         <References>
             <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
             <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=5002</Reference>
             <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=5026</Reference>
         </References>
         <Value>
-            <uax:String>VDMA Robotics</uax:String>
+            <uax:String>AZO Robotics</uax:String>
         </Value>
     </UAVariable>
     <UAVariable DataType="LocalizedText" ParentNodeId="ns=1;i=5002" NodeId="ns=1;i=6003" BrowseName="3:Model">
@@ -407,8 +407,8 @@
         </References>
         <Value>
             <uax:LocalizedText>
-                <uax:Locale>en-US</uax:Locale>
-                <uax:Text>TestSoftwareManufacturer</uax:Text>
+                <uax:Locale>de-DE</uax:Locale>
+                <uax:Text>AZO Gmbh</uax:Text>
             </uax:LocalizedText>
         </Value>
     </UAVariable>
@@ -519,7 +519,7 @@
             <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=5037</Reference>
         </References>
         <Value>
-            <uax:String>N 50.0823924 E 8.6257018</uax:String>
+            <uax:String>N 49.4290039 E 9.4320532</uax:String>
         </Value>
     </UAVariable>
     <UAVariable DataType="LocalizedText" ParentNodeId="ns=1;i=5037" NodeId="ns=1;i=6045" BrowseName="3:Manufacturer">
@@ -531,7 +531,7 @@
         </References>
         <Value>
             <uax:LocalizedText>
-                <uax:Text>Sample_MDS_Manufacturer</uax:Text>
+                <uax:Text>AZO Gmbh</uax:Text>
             </uax:LocalizedText>
         </Value>
     </UAVariable>
@@ -596,7 +596,7 @@
             <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=5027</Reference>
         </References>
         <Value>
-            <uax:String>VDMA Robot 01</uax:String>
+            <uax:String>AZO Robot 01</uax:String>
         </Value>
     </UAVariable>
     <UAObject ParentNodeId="ns=1;i=5018" NodeId="ns=1;i=5019" BrowseName="2:Axes">
@@ -1004,7 +1004,7 @@
         </References>
         <Value>
             <uax:LocalizedText>
-                <uax:Text>VDMA Robot</uax:Text>
+                <uax:Text>AZO Robot</uax:Text>
             </uax:LocalizedText>
         </Value>
     </UAVariable>
@@ -1050,8 +1050,8 @@
         </References>
         <Value>
             <uax:LocalizedText>
-                <uax:Locale>en-US</uax:Locale>
-                <uax:Text>TestMotorManufacturer</uax:Text>
+                <uax:Locale>de-DE</uax:Locale>
+                <uax:Text>AZO Gmbh</uax:Text>
             </uax:LocalizedText>
         </Value>
     </UAVariable>
@@ -1162,7 +1162,7 @@
             <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=5027</Reference>
         </References>
         <Value>
-            <uax:String>N 50.0823924 E 8.6257018</uax:String>
+            <uax:String>N 49.4290039 E 9.4320532</uax:String>
         </Value>
     </UAVariable>
     <UAVariable DataType="LocalizedText" ParentNodeId="ns=1;i=5018" NodeId="ns=1;i=6034" BrowseName="3:Manufacturer">
@@ -1174,8 +1174,8 @@
         </References>
         <Value>
             <uax:LocalizedText>
-                <uax:Locale>en-US</uax:Locale>
-                <uax:Text>TestMotionDeviceManufacturer</uax:Text>
+                <uax:Locale>de-DE</uax:Locale>
+                <uax:Text>AZO Gmbh</uax:Text>
             </uax:LocalizedText>
         </Value>
     </UAVariable>
@@ -1187,7 +1187,7 @@
             <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=5027</Reference>
         </References>
         <Value>
-            <uax:String>VDMA</uax:String>
+            <uax:String>AZO</uax:String>
         </Value>
     </UAVariable>
     <UAVariable DataType="LocalizedText" ParentNodeId="ns=1;i=5018" NodeId="ns=1;i=6035" BrowseName="3:Model">

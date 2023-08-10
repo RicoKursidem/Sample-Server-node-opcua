@@ -1,0 +1,5 @@
+services:
+  opcua-rolog:
+    build: .
+    ports:
+      - "4841:4840"
