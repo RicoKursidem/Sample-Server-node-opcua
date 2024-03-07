@@ -31,7 +31,7 @@ jobs:
     # Name the Job
     name: Lint Code Base
     # Set the agent to run on
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
 
     ##################
     # Load all steps #
@@ -41,7 +41,7 @@ jobs:
       # Checkout the code base #
       ##########################
       - name: Checkout Code
-        uses: actions/checkout@v3.5.3
+        uses: actions/checkout@v4.1.1
         with:
           # Full git history is needed to get a proper list of changed files
           fetch-depth: 0
@@ -50,10 +50,10 @@ jobs:
       # Run Linter against code base #
       ################################
       - name: Lint Code Base
-        uses: github/super-linter@v5.0.0
+        uses: super-linter/super-linter@v5.7.2
         env:
           VALIDATE_ALL_CODEBASE: false
-          #JAVASCRIPT_DEFAULT_STYLE: prettier
+          # JAVASCRIPT_DEFAULT_STYLE: prettier
           VALIDATE_XML: false
           # Evaluate JS with eslint instead of standard
           VALIDATE_JAVASCRIPT_STANDARD: false

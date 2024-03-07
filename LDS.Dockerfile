@@ -1,7 +1,7 @@
-FROM node:20.5.0-alpine3.17
+FROM node:21.4.0-alpine3.17
 # hadolint ignore=DL3018
 RUN apk --no-cache add \
-    openssl=3.0.10-r0
+    openssl=3.0.12-r4
 
 WORKDIR /home/node/discovery
 
