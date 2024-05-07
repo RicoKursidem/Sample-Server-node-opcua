@@ -11,17 +11,18 @@
   "NamespaceInformations": [
     {
       "Namespace": "http://opcfoundation.org/UA/Robotics/",
-	    "Types": [
+      "Types": [
         {
           "Uri": "http://opcfoundation.org/UA/Robotics/",
           "Id": "i=1002",
           "$comment": "MotionDeviceSystemType"
         },
-		{
+        {
           "Uri": "http://opcfoundation.org/UA/Robotics/",
           "Id": "i=1004",
           "$comment": "MotionDeviceType"
-        },{
+        },
+        {
           "Uri": "http://opcfoundation.org/UA/Robotics/",
           "Id": "i=1003",
           "$comment": "ControllerType"

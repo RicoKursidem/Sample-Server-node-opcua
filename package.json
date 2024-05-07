@@ -1,6 +1,6 @@
 {
   "name": "sampleserver-node-opcua",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "",
   "main": "server.js",
   "scripts": {
@@ -13,7 +13,7 @@
     "build": "tsc && pkg dst/server.js",
     "build_lds": "tsc && pkg dst/LocalDiscoveryServer/local-discovery-server.js",
     "update:node-opcua": "npx rimraf node_modules && npx -y npm-check-updates -u -f \"node-opcua*\" && npm install",
-    "update:dependencygraph": "depcruise --include-only ^src --output-type dot src | dot -T svg > dependencygraph.svg"
+    "update:dependencygraph": "depcruise --no-config --include-only ^src --output-type dot src | dot -T svg > dependencygraph.svg"
   },
   "repository": {
     "type": "git",
@@ -28,26 +28,26 @@
   "dependencies": {
     "bcrypt": "5.1.1",
     "chalk": "4.1.2",
-    "node-opcua": "2.122.0",
-    "node-opcua-file-transfer": "2.122.0",
+    "node-opcua": "2.124.0",
+    "node-opcua-file-transfer": "2.124.0",
     "node-opcua-pki": "4.10.0",
     "node-opcua-pubsub-expander": "^0.19.2",
     "node-opcua-pubsub-server": "^0.19.2",
-    "node-opcua-server-discovery": "2.122.0",
+    "node-opcua-server-discovery": "2.124.0",
     "yargs": "17.7.2"
   },
   "devDependencies": {
     "@types/bcrypt": "5.0.2",
-    "@types/chai": "4.3.12",
+    "@types/chai": "4.3.15",
     "@types/mocha": "10.0.6",
-    "@types/node": "20.11.23",
+    "@types/node": "20.12.8",
     "@types/semver": "7.5.8",
     "@types/yargs": "17.0.32",
     "chai": "5.1.0",
     "chalk": "4.1.2",
-    "dependency-cruiser": "16.2.2",
-    "mocha": "10.3.0",
+    "dependency-cruiser": "16.3.1",
+    "mocha": "10.4.0",
     "pkg": "^5.8.0",
-    "typescript": "5.3.3"
+    "typescript": "5.4.5"
   }
 }

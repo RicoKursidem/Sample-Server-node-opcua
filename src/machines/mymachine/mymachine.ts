@@ -19,13 +19,18 @@ import {
     UAObject,
     AddressSpace,
     UAObjectType,
+    setNamespaceMetaData,
 } from 'node-opcua'
+import { ServerRolePermissionGroup } from '../../permissiongroups'
+import { initializeFakeDataSource, variableGetter } from './datasource'
 
 export const createMyMachineLogic = async (addressSpace: AddressSpace): Promise<void> => {
     // Add a machine manually:
     const machineryIdx = addressSpace?.getNamespaceIndex('http://opcfoundation.org/UA/Machinery/')
     const machinesFolder = addressSpace?.findNode(`ns=${machineryIdx};i=1001`) as UAObject
     const namespace = addressSpace?.registerNamespace('http://mynewmachinenamespace/UA')
+    namespace.setDefaultRolePermissions(ServerRolePermissionGroup.DEFAULT)
+    setNamespaceMetaData(namespace)
     const myMachine = namespace?.addObject({
         browseName: 'MyMachine',
         nodeId: `ns=${namespace.index};s=MyMachine`,
@@ -49,6 +54,21 @@ export const createMyMachineLogic = async (addressSpace: AddressSpace): Promise<
     manufacturer?.setValueFromSource({
         dataType: DataType.LocalizedText,
         value: coerceLocalizedText('Andreas Heine'),
+    })
+    const model = myMachineIdentification?.getChildByName('Model') as UAVariable
+    model?.setValueFromSource({
+        dataType: DataType.LocalizedText,
+        value: coerceLocalizedText('Model-123'),
+    })
+    const uri = myMachineIdentification?.getChildByName('ProductInstanceUri') as UAVariable
+    uri?.setValueFromSource({
+        dataType: DataType.String,
+        value: 'ProductInstanceUri-123',
+    })
+    const serial = myMachineIdentification?.getChildByName('SerialNumber') as UAVariable
+    serial?.setValueFromSource({
+        dataType: DataType.String,
+        value: 'SerialNumber-123',
     })
     const machineComponentsType = addressSpace?.findNode(`ns=${machineryIdx};i=1006`) as UAObjectType
     const myMachineComponents = machineComponentsType?.instantiate({
@@ -84,6 +104,11 @@ export const createMyMachineLogic = async (addressSpace: AddressSpace): Promise<
         nodeId: machineryBuildingBlocks,
         isForward: false,
     })
+    const myItemStateCurrentState = myItemState.getChildByName("CurrentState") as UAVariable
+    myItemStateCurrentState?.setValueFromSource({
+        dataType: DataType.LocalizedText,
+        value: coerceLocalizedText('Executing'),
+    })
 
     const myOperationMode = (addressSpace!.findNode(`ns=${machineryIdx};i=1008`) as UAObjectType).instantiate({
         browseName: {
@@ -97,6 +122,14 @@ export const createMyMachineLogic = async (addressSpace: AddressSpace): Promise<
         nodeId: machineryBuildingBlocks,
         isForward: false,
     })
+    const myOperationModeCurrentState = myOperationMode.getChildByName("CurrentState") as UAVariable
+    myOperationModeCurrentState?.setValueFromSource({
+        dataType: DataType.LocalizedText,
+        value: coerceLocalizedText('Setup'),
+    })
+
+
+    initializeFakeDataSource(addressSpace)
 
     // ProcessValues
 
@@ -120,6 +153,26 @@ export const createMyMachineLogic = async (addressSpace: AddressSpace): Promise<
         nodeId: monitoringObject,
         isForward: false,
     })
+    const temperaturTag = temperature.getChildByName("Tag") as UAVariable
+    temperaturTag?.setValueFromSource({
+        dataType: DataType.String,
+        value: 'Temperature-Tag-123',
+    })
+    const temperatureAnalogSignal = temperature.getChildByName("AnalogSignal") as UAVariable
+    temperatureAnalogSignal.bindVariable({
+        timestamped_get: variableGetter,
+        // timestamped_set: variableSetter
+    }, true)
+    const temperatureAnalogSignalEURange = temperatureAnalogSignal.getChildByName("EURange") as UAVariable
+    temperatureAnalogSignalEURange.bindVariable({
+        timestamped_get: variableGetter,
+        // timestamped_set: variableSetter
+    }, true)
+    const temperatureAnalogSignalEngineeringUnits = temperatureAnalogSignal.getChildByName("EngineeringUnits") as UAVariable
+    temperatureAnalogSignalEngineeringUnits.bindVariable({
+        timestamped_get: variableGetter,
+        // timestamped_set: variableSetter
+    }, true)
 
     const pressure = processValuesType.instantiate({
         browseName: {
@@ -133,6 +186,26 @@ export const createMyMachineLogic = async (addressSpace: AddressSpace): Promise<
         nodeId: monitoringObject,
         isForward: false,
     })
+    const pressureTag = pressure.getChildByName("Tag") as UAVariable
+    pressureTag?.setValueFromSource({
+        dataType: DataType.String,
+        value: 'Pressure-Tag-123',
+    })
+    const pressureAnalogSignal = pressure.getChildByName("AnalogSignal") as UAVariable
+    pressureAnalogSignal.bindVariable({
+        timestamped_get: variableGetter,
+        // timestamped_set: variableSetter
+    }, true)
+    const pressureAnalogSignalEURange = pressureAnalogSignal.getChildByName("EURange") as UAVariable
+    pressureAnalogSignalEURange.bindVariable({
+        timestamped_get: variableGetter,
+        // timestamped_set: variableSetter
+    }, true)
+    const pressureAnalogSignalEngineeringUnits = pressureAnalogSignal.getChildByName("EngineeringUnits") as UAVariable
+    pressureAnalogSignalEngineeringUnits.bindVariable({
+        timestamped_get: variableGetter,
+        // timestamped_set: variableSetter
+    }, true)
 
 
     // instantiate components here -> organizedBy: myMachineComponents
