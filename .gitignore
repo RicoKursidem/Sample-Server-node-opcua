@@ -10,3 +10,5 @@ local-discovery-server-linux
 local-discovery-server-macos
 local-discovery-server-win.exe
 log.txt
+ca-certificates-20230506-r0.apk
+DEOSB-Sophos-TransparentProxy.crt

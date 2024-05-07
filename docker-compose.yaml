@@ -3,5 +3,9 @@ version: '3'
 services:
   opcua-rolog:
     build: .
+    container_name: sampleserver-node-opcua
     ports:
       - "4841:4840"
+    environment:
+      - PORT=4840
+      - IP=127.0.0.1
